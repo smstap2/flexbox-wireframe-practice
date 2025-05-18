@@ -8,7 +8,6 @@ body {
   }
   
   header,
-  aside,
   footer {
     width: 100%;
     max-width: 400px;
@@ -24,6 +23,28 @@ body {
     background-color: purple;
   }
   
+  footer {
+    background-color: darkorange;
+  }
+  
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  aside {
+    background-color: steelblue;
+    padding: 1rem;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: xx-large;
+    text-align: center;
+  }
+  
   .articles {
     background-color: mediumseagreen;
     padding: 1rem;
@@ -31,8 +52,6 @@ body {
     flex-direction: column;
     gap: 1rem;
     border-radius: 8px;
-    width: 100%;
-    max-width: 400px;
     text-align: center;
   }
   
@@ -45,10 +64,36 @@ body {
     width: 100%;
   }
   
-  aside {
-    background-color: steelblue;
-  }
+  @media (min-width: 768px) {
+    header,
+    footer {
+      max-width: 1000px;
+    }
   
-  footer {
-    background-color: darkorange;
+    .main-content {
+      flex-direction: row;
+      max-width: 1000px;
+      height: 100%;
+    }
+  
+    aside {
+      flex: 1;
+      max-width: 25%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .articles {
+      flex: 3;
+      max-width: 75%;
+    }
+  
+    aside {
+      order: 1;
+    }
+  
+    .articles {
+      order: 2;
+    }
   }
